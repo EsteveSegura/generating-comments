@@ -86,3 +86,11 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+dataset/comments_veganfood.txt
+dataset/foodsCleanLong.txt
+dataset/frases_comida.txt
+dataset/lorca.txt
+dataset/mix.txt
+dataset/movies.txt
+dataset/origindalDataSetfoods.txt
+dataset/peliculas.txt
