@@ -5,11 +5,11 @@ function randomInt(min,max){
     return Math.round(Math.random() * (max-min)+ min)
 }
 
-function saveArrayToTxtLineByLine(arrFinal){
+function saveArrayToTxtLineByLine(arrFinal,pathOutput){
     return new Promise(function(resolve,reject){
         let fileToSave = deleteRepeatedValuesOnArray(arrFinal)
 
-        fs.writeFile("./data.txt", fileToSave.join("\n"), function(err){
+        fs.writeFile(pathOutput, fileToSave.join("\n"), function(err){
             if(err){
                 reject(err)
             }
@@ -19,11 +19,11 @@ function saveArrayToTxtLineByLine(arrFinal){
     })
 }
 
-function saveToJson(arrFinal){
+function saveToJson(arrFinal,pathOutput){
     return new Promise(function(resolve,reject){
         fileToSave = deleteRepeatedValuesOnArray(arrFinal)
 
-        fs.writeFile("./data.json", JSON.stringify(fileToSave),function(err){
+        fs.writeFile(pathOutput, JSON.stringify(fileToSave),function(err){
             if(err){
                 reject(err)
             }

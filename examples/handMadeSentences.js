@@ -1,6 +1,9 @@
 const utils = require('../src/utils.js');
-const generateCommentsFromHandMadeDate = require('../src/generateCommentsFromHandMadeDate.js')
+const markov = require('../src/markov.js');
+const generateCommentsFromHandMadeData = require('../src/generateCommentsFromHandMadeData.js')
+
 let arrFinal = []
+let markovChain = []
 
 let listSetencesInit =[
     "Eso tiene una pinta de ser $",
@@ -113,5 +116,3 @@ for(let i = 0; i < 2000; i++){
     console.log(TypeFour)
 }
 
-utils.saveToJson(arrFinal, `./dataset/${Date.now()}.json`);
-utils.saveArrayToTxtLineByLine(arrFinal, `./dataset/${Date.now()}.txt`);
