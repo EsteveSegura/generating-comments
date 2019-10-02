@@ -1,0 +1,23 @@
+{
+  "name": "generating-comments-ai",
+  "version": "0.0.1",
+  "description": "generate comments by AI",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "keywords": [
+    "markov",
+    "brain",
+    "chain",
+    "AI",
+    "comments"
+  ],
+  "author": "GiR",
+  "license": "ISC",
+  "dependencies": {
+    "brain.js": "^2.0.0-alpha.9",
+    "natural-brain": "^0.3.2",
+    "titlegen": "^0.1.2"
+  }
+}
