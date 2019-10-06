@@ -1,2 +1,2 @@
 # generating-comments
-https://medium.com/me/stats/post/36eb1ef287e8
+https://medium.com/@EsteveSegura/generating-text-automatically-for-social-networks-with-algorithms-and-markov-chains-36eb1ef287e8
