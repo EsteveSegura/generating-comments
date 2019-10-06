@@ -19,11 +19,17 @@ function saveArrayToTxtLineByLine(arrFinal,pathOutput){
     })
 }
 
-function saveToJson(arrFinal,pathOutput){
+function saveToJson(arrFinal,label,pathOutput){
     return new Promise(function(resolve,reject){
         fileToSave = deleteRepeatedValuesOnArray(arrFinal)
+        let prepareAsTrainingData = fileToSave.map((sentence) =>{
+            return{
+                input: sentence,
+                output : { label : 1 }
+            }
+        });
 
-        fs.writeFile(pathOutput, JSON.stringify(fileToSave),function(err){
+        fs.writeFile(pathOutput, JSON.stringify(prepareAsTrainingData),function(err){
             if(err){
                 reject(err)
             }
@@ -33,10 +39,14 @@ function saveToJson(arrFinal,pathOutput){
 }
 
 function deleteRepeatedValuesOnArray(array){
-    finalSentences = array.filter(function(item, pos) {
+    cleanArray = array.filter(function(item, pos) {
         return array.indexOf(item) == pos;
     })
-    return finalSentences
+    return cleanArray
+}
+
+async function sleep(milliseconds){
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
 function readFileLineByLine(dataPath){
@@ -57,4 +67,4 @@ function readFileLineByLine(dataPath){
     })
 }
 
-module.exports = { saveToJson, saveArrayToTxtLineByLine, randomInt, readFileLineByLine }
+module.exports = { sleep, saveToJson, saveArrayToTxtLineByLine, randomInt, readFileLineByLine }

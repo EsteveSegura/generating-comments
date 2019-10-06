@@ -91,9 +91,9 @@ let sentencesAboutPhotography = {
 
 
 async function main(){
-    for(let i = 0; i < 50000; i++){
+    for(let i = 0; i < 5; i++){
         let sentencesOne = await generateCommentsFromHandMadeData.generate(listAdjectives, listSetencesInit)
-        let sentencesTwo = await generateCommentsFromHandMadeData.generate(listVerbs,listSentences, true, emojis)
+        let sentencesTwo = await generateCommentsFromHandMadeData.generate(listVerbs,listSentences, false, emojis)
         let sentencesTwoClean = await generateCommentsFromHandMadeData.generate(listVerbsConjugado,listSentences)
         let photographySentences = await generateCommentsFromHandMadeData.generate(sentencesAboutPhotography.wordsFill,sentencesAboutPhotography.mainSentence)
 
@@ -119,10 +119,10 @@ async function main(){
     let markovChain = await markov.generate(arrFinal,3000);
 
     //Markov Outputs
-    await utils.saveToJson(markovChain, `../output/markov_${Date.now()}.json`);
+    await utils.saveToJson(markovChain,"Comida", `../output/markov_${Date.now()}.json`);
     await utils.saveArrayToTxtLineByLine(markovChain, `../output/markov_${Date.now()}.txt`);
     //Clean Outputs
-    await utils.saveToJson(arrFinal, `../output/clean_${Date.now()}.json`);
+    await utils.saveToJson(arrFinal,"Comida", `../output/clean_${Date.now()}.json`);
     await utils.saveArrayToTxtLineByLine(arrFinal, `../output/clean_${Date.now()}.txt`);
 }
 
