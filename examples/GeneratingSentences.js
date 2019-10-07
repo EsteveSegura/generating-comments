@@ -91,14 +91,3 @@ async function generateSentences(){
 }
 
 generateSentences();
-
-
-async function main(){
-    for(let i = 0; i < 30; i++){
-        let sentencesGeneratorFood = await generateCommentsFromHandMadeData.generate(sentencesAboutFood.wordsFill, sentencesAboutFood.mainSentence)
-        let sentencesGeneratorFoodRandomValues = sentencesGeneratorFood[utils.randomInt(0,sentencesGeneratorFood.length-1)]
-        console.log(sentencesGeneratorFoodRandomValues)
-    }
-}
-
-//main()
